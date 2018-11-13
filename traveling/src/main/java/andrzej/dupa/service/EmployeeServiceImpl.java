@@ -1,6 +1,7 @@
 package andrzej.dupa.service;
 
 
+import andrzej.dupa.dto.EmployeeDto;
 import andrzej.dupa.model.Employee;
 import andrzej.dupa.repository.EmployeeRepository;
 
@@ -27,8 +28,17 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Optional<Employee> getEmployeeById(long id) {
-        return employeeRepository.findById(id);
+    public long addEmployee(EmployeeDto employee) {
+
+        Employee employeeEntitiy = new Employee();
+        employeeEntitiy.setEmail(employee.getEmail());
+        employeeEntitiy.setName(employee.getName());
+        employeeEntitiy.setLastName(employee.getLastName());
+        employeeEntitiy.setActive("on".equals(employee.getActive()));
+        employeeEntitiy.setPhone(employee.getPhone());
+
+        return employeeRepository.save(employeeEntitiy).getId();
+
     }
 
 

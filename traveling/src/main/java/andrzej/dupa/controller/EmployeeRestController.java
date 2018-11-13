@@ -2,11 +2,10 @@ package andrzej.dupa.controller;
 
 import java.util.List;
 
+import andrzej.dupa.dto.EmployeeDto;
+import andrzej.dupa.mapper.EmployeeMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import andrzej.dupa.model.Employee;
 import andrzej.dupa.service.EmployeeService;
@@ -18,9 +17,12 @@ public class EmployeeRestController {
     private EmployeeService employeeService;
 
     @RequestMapping(path="/employees", method=RequestMethod.GET)
-    public List<Employee> getAllEmployees(){
-        return employeeService.getAllEmployees();
+    public List<EmployeeDto> getAllEmployees(){
+        List<Employee> allEmployees = employeeService.getAllEmployees();
+        EmployeeMapper employeeMapper = new EmployeeMapper();
+        return employeeMapper.toDtoList(allEmployees);
     }
+
     @RequestMapping(value = "/employee/{id}", method = RequestMethod.GET)
     public Employee getEmployeeById(@PathVariable("id") long id){
         return null;
@@ -33,5 +35,12 @@ public class EmployeeRestController {
 
         return "Remove employee has been succeed!!!" + id;
     }
+
+    @RequestMapping(value = "/employee", method = RequestMethod.POST)
+    public long addEmployee(@RequestBody EmployeeDto employeeDto){
+
+        return employeeService.addEmployee(employeeDto);
+    }
+
 
 }

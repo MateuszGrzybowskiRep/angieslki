@@ -2,6 +2,35 @@ $(document).ready(function () {
 
     fetchEmployees();
 
+    $('#addEmployee').click(function (eventAdd) {
+        eventAdd.preventDefault();
+
+        var employee = {
+            name: $('#name').val(),
+            lastName: $('#lastname').val(),
+            phone: $('#phone').val(),
+            email: $('#email').val(),
+            active: $('#active').val()
+        };
+        $.ajax({
+            url: `/employee`,
+            method: 'POST',
+            data: JSON.stringify(employee),
+            contentType: 'application/json',
+            success: function (data, status) {
+                console.log('Data:' + data);
+                console.log("Status: " + status);
+
+                fetchEmployees();
+
+                $('#close').click();
+            },
+            error: function (data, status) {
+
+            }
+        });
+    });
+
 
     function addEmployessToTable(employees) {
         for (var i = 0; i < employees.length; i++) {

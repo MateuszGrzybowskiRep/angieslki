@@ -2,10 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <title>Spring Boot + JPA + Datatables</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!--<button id="addEmployee" type="button" class="btn btn-danger">Add new employee</button>-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
     <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
@@ -14,7 +15,9 @@
 
 <body>
 
+<div class="alert alert-success" style="display: none;">
 
+</div>
 
 <h1>Employees Table</h1>
 <table class="table">
@@ -29,38 +32,95 @@
         <th scope="col">Remove</th>
     </tr>
     </thead>
-    <tbody id="employee" >
+    <tbody id="employee">
     </tbody>
 </table>
-<button id="addEmployee" type="button" class="btn btn-danger">Add new employee</button>
 
+<div class="container">
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add employee</button>
+
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">New employee form</h4>
+                </div>
+                <div class="modal-body">
+
+                    <form action="/employee">
+
+                        <div class="form-group">
+
+                            <div class="form-group">
+                                <label for="name">Firstname:</label>
+                                <input type="text" class="form-control" id="name" placeholder="Firstname" name="name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lastname">Lastname:</label>
+                                <input type="text" class="form-control" id="lastname" placeholder="Firstname"
+                                       name="lastName">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone number:</label>
+                                <input type="number" class="form-control" id="phone" placeholder="Phone number"
+                                       name="phone">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter email"
+                                       name="email">
+                            </div>
+                        </div>
+
+                        <div class="checkbox">
+                            <label><input type="checkbox" name="active" id="active">Is employee active</label>
+                        </div>
+
+                        <button id="addEmployee" type="submit" class="btn btn-default">Add employee</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button id="close" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
 
 
 <!--<table id="employeesTable" class="display">-->
 
-    <!--&lt;!&ndash; Header Table &ndash;&gt;-->
-    <!--<thead>-->
-    <!--<tr>-->
-        <!--<th>Id</th>-->
-        <!--<th>Name</th>-->
-        <!--<th>Last Name</th>-->
-        <!--<th>Email</th>-->
-        <!--<th>Phone</th>-->
-        <!--<th>Remove</th>-->
-    <!--</tr>-->
-    <!--</thead>-->
-    <!--&lt;!&ndash; Footer Table &ndash;&gt;-->
-    <!--<tfoot>-->
-    <!--<tr>-->
-        <!--<th>Id</th>-->
-        <!--<th>Name</th>-->
-        <!--<th>Last Name</th>-->
-        <!--<th>Email</th>-->
-        <!--<th>Phone</th>-->
-        <!--<th>Active</th>-->
-        <!--<th>Remove</th>-->
-    <!--</tr>-->
-    <!--</tfoot>-->
+<!--&lt;!&ndash; Header Table &ndash;&gt;-->
+<!--<thead>-->
+<!--<tr>-->
+<!--<th>Id</th>-->
+<!--<th>Name</th>-->
+<!--<th>Last Name</th>-->
+<!--<th>Email</th>-->
+<!--<th>Phone</th>-->
+<!--<th>Remove</th>-->
+<!--</tr>-->
+<!--</thead>-->
+<!--&lt;!&ndash; Footer Table &ndash;&gt;-->
+<!--<tfoot>-->
+<!--<tr>-->
+<!--<th>Id</th>-->
+<!--<th>Name</th>-->
+<!--<th>Last Name</th>-->
+<!--<th>Email</th>-->
+<!--<th>Phone</th>-->
+<!--<th>Active</th>-->
+<!--<th>Remove</th>-->
+<!--</tr>-->
+<!--</tfoot>-->
 <!--</table>-->
 
 </body>
