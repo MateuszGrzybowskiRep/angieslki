@@ -3,7 +3,7 @@ package andrzej.dupa.mapper;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
+// ciekawe jak to dziala bez typow generycznych
 public abstract class EmployeeAbstractMapper<E, D> {
 
     public abstract D toDto(E entity);
