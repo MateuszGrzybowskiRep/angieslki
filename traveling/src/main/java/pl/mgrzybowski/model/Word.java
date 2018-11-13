@@ -1,4 +1,4 @@
-package andrzej.dupa.model;
+package pl.mgrzybowski.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Words {
+public class Word {
 
     @Id
     @GeneratedValue
@@ -18,12 +18,12 @@ public class Words {
     private String pol;
 
 
-    public Words(String eng, String pol) {
+    public Word(String eng, String pol) {
         this.eng = eng;
         this.pol = pol;
     }
 
-    public Words() {
+    public Word() {
 
     }
 

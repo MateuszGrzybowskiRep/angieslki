@@ -1,4 +1,4 @@
-package andrzej.dupa.model;
+package pl.mgrzybowski.model;
 
 
 import javax.persistence.Column;
@@ -7,21 +7,21 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Lists {
+public class WordList {
 
     @Id
     @GeneratedValue
     @Column(name="id_list")
     private long id;
     @Column(name="name_of_list")
-    private String lists;
+    private String listName;
 
 
-    public Lists(String lists) {
-        this.lists = lists;
+    public WordList(String lists) {
+        this.listName = lists;
     }
 
-    public Lists() {
+    public WordList() {
 
     }
 
@@ -34,11 +34,11 @@ public class Lists {
         this.id = id;
     }
 
-    public String getLists() {
-        return lists;
+    public String getListName() {
+        return listName;
     }
 
-    public void setLists(String lists) {
-        this.lists = lists;
+    public void setListName(String listName) {
+        this.listName = listName;
     }
 }

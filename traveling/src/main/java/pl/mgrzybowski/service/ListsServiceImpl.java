@@ -1,8 +1,8 @@
-package andrzej.dupa.service;
+package pl.mgrzybowski.service;
 
-import andrzej.dupa.dto.ListsDto;
-import andrzej.dupa.model.Lists;
-import andrzej.dupa.repository.ListsRepository;
+import pl.mgrzybowski.dto.ListsDto;
+import pl.mgrzybowski.model.WordList;
+import pl.mgrzybowski.repository.ListsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +15,7 @@ public class ListsServiceImpl implements ListsService {
     private ListsRepository listsRepository;
 
     @Override
-    public List<Lists> getAllLists() {
+    public List<WordList> getAllLists() {
         return listsRepository.findAll();
     }
 
@@ -27,8 +27,8 @@ public class ListsServiceImpl implements ListsService {
 
     @Override
     public long addLists(ListsDto listsDto) {
-        Lists listsEntitiy = new Lists();
-        listsEntitiy.setLists(listsDto.getLists());
+        WordList listsEntitiy = new WordList();
+        listsEntitiy.setListName(listsDto.getLists());
         return listsRepository.save(listsEntitiy).getId();
     }
 }

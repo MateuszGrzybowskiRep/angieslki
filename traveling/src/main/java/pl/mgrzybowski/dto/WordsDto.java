@@ -1,4 +1,4 @@
-package andrzej.dupa.dto;
+package pl.mgrzybowski.dto;
 
 public class WordsDto {
     private long id;

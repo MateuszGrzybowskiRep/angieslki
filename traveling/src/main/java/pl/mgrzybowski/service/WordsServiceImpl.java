@@ -1,8 +1,8 @@
-package andrzej.dupa.service;
+package pl.mgrzybowski.service;
 
-import andrzej.dupa.dto.WordsDto;
-import andrzej.dupa.model.Words;
-import andrzej.dupa.repository.WordsRepository;
+import pl.mgrzybowski.dto.WordsDto;
+import pl.mgrzybowski.model.Word;
+import pl.mgrzybowski.repository.WordsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +15,7 @@ public class WordsServiceImpl implements WordsService {
     private WordsRepository wordsRepository;
 
     @Override
-    public List<Words> getAllWords() {
+    public List<Word> getAllWords() {
         return wordsRepository.findAll();
     }
 
@@ -27,7 +27,7 @@ public class WordsServiceImpl implements WordsService {
 
     @Override
     public long addWords(WordsDto wordsDto) {
-        Words wordsEntitiy = new Words();
+        Word wordsEntitiy = new Word();
         wordsEntitiy.setEng(wordsDto.getEng());
         wordsEntitiy.setPol(wordsDto.getPol());
         return wordsRepository.save(wordsEntitiy).getId();

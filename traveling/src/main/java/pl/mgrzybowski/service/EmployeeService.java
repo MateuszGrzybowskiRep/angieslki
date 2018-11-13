@@ -1,9 +1,9 @@
-package andrzej.dupa.service;
+package pl.mgrzybowski.service;
 
 import java.util.List;
 
-import andrzej.dupa.dto.EmployeeDto;
-import andrzej.dupa.model.Employee;
+import pl.mgrzybowski.dto.EmployeeDto;
+import pl.mgrzybowski.model.Employee;
 
 public interface EmployeeService {
 

@@ -1,7 +1,7 @@
-package andrzej.dupa.mapper;
+package pl.mgrzybowski.mapper;
 
-import andrzej.dupa.dto.EmployeeDto;
-import andrzej.dupa.model.Employee;
+import pl.mgrzybowski.dto.EmployeeDto;
+import pl.mgrzybowski.model.Employee;
 
 public class EmployeeMapper extends EmployeeAbstractMapper<Employee, EmployeeDto> {
 

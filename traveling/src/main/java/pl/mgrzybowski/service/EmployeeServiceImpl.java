@@ -1,9 +1,9 @@
-package andrzej.dupa.service;
+package pl.mgrzybowski.service;
 
 
-import andrzej.dupa.dto.EmployeeDto;
-import andrzej.dupa.model.Employee;
-import andrzej.dupa.repository.EmployeeRepository;
+import pl.mgrzybowski.dto.EmployeeDto;
+import pl.mgrzybowski.model.Employee;
+import pl.mgrzybowski.repository.EmployeeRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

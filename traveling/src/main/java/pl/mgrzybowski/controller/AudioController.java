@@ -1,4 +1,4 @@
-package andrzej.dupa.controller;
+package pl.mgrzybowski.controller;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;

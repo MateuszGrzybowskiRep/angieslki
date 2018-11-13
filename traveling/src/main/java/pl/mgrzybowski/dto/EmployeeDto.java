@@ -1,4 +1,4 @@
-package andrzej.dupa.dto;
+package pl.mgrzybowski.dto;
 
 import javax.persistence.Column;
 

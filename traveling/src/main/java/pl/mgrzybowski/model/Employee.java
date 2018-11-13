@@ -1,4 +1,4 @@
-package andrzej.dupa.model;
+package pl.mgrzybowski.model;
 
 import javax.persistence.*;
 import java.util.List;

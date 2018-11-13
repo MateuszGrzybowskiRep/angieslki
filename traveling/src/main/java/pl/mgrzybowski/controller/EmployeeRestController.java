@@ -1,14 +1,14 @@
-package andrzej.dupa.controller;
+package pl.mgrzybowski.controller;
 
 import java.util.List;
 
-import andrzej.dupa.dto.EmployeeDto;
-import andrzej.dupa.mapper.EmployeeMapper;
+import pl.mgrzybowski.dto.EmployeeDto;
+import pl.mgrzybowski.mapper.EmployeeMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import andrzej.dupa.model.Employee;
-import andrzej.dupa.service.EmployeeService;
+import pl.mgrzybowski.model.Employee;
+import pl.mgrzybowski.service.EmployeeService;
 
 @RestController
 public class EmployeeRestController {

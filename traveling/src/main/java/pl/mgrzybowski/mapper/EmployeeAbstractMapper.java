@@ -1,4 +1,4 @@
-package andrzej.dupa.mapper;
+package pl.mgrzybowski.mapper;
 
 import java.util.ArrayList;
 import java.util.List;
