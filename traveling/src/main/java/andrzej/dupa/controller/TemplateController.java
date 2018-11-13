@@ -11,7 +11,10 @@ public class TemplateController {
     public String goHome(){
         return "index";
     }
-
+    @RequestMapping(path="/start", method=RequestMethod.GET)
+    public String startPage(){
+        return "start";
+    }
     @RequestMapping(path="/add", method=RequestMethod.GET)
     public String getEmployeeFormView(){
         return "employeeForm";

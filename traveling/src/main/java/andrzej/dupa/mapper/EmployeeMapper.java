@@ -3,7 +3,7 @@ package andrzej.dupa.mapper;
 import andrzej.dupa.dto.EmployeeDto;
 import andrzej.dupa.model.Employee;
 
-public class EmployeeMapper extends AbstractMapper<Employee, EmployeeDto> {
+public class EmployeeMapper extends EmployeeAbstractMapper<Employee, EmployeeDto> {
 
     @Override
     public EmployeeDto toDto(Employee entity) {

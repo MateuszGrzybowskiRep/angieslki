@@ -8,7 +8,7 @@ public class Employee {
 
     @Id
     @GeneratedValue
-    @Column(name="id")
+    @Column(name="id_em")
     private long id;
     @Column(name="name")
     private String name;
@@ -24,11 +24,8 @@ public class Employee {
         super();
     }
 
-    @ManyToOne
-    private EmployeeRole role;
 
     public Employee(String name, String lastName, String email, String phone, boolean active) {
-        super();
         this.name = name;
         this.lastName = lastName;
         this.email = email;

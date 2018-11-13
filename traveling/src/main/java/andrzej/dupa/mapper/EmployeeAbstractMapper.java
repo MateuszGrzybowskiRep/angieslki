@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public abstract class AbstractMapper<E, D> {
+public abstract class EmployeeAbstractMapper<E, D> {
 
     public abstract D toDto(E entity);
 
