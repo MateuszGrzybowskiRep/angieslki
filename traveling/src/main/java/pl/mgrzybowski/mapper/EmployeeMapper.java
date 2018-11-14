@@ -1,12 +1,12 @@
 package pl.mgrzybowski.mapper;
 
 import pl.mgrzybowski.dto.EmployeeDto;
-import pl.mgrzybowski.model.Employee;
+import pl.mgrzybowski.model.User;
 
-public class EmployeeMapper extends EmployeeAbstractMapper<Employee, EmployeeDto> {
+public class EmployeeMapper extends EmployeeAbstractMapper<User, EmployeeDto> {
 
     @Override
-    public EmployeeDto toDto(Employee entity) {
+    public EmployeeDto toDto(User entity) {
         EmployeeDto dto = new EmployeeDto();
         dto.setName(entity.getName());
         dto.setLastName(entity.getLastName());

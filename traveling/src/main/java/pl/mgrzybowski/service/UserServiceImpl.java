@@ -2,8 +2,8 @@ package pl.mgrzybowski.service;
 
 
 import pl.mgrzybowski.dto.EmployeeDto;
-import pl.mgrzybowski.model.Employee;
-import pl.mgrzybowski.repository.EmployeeRepository;
+import pl.mgrzybowski.model.User;
+import pl.mgrzybowski.repository.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,13 +11,13 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service("employeeService")
-public class EmployeeServiceImpl implements EmployeeService {
+public class UserServiceImpl implements UserService {
 
     @Autowired
-    private EmployeeRepository employeeRepository;
+    private UserRepository employeeRepository;
 
     @Override
-    public List<Employee> getAllEmployees() {
+    public List<User> getAllEmployees() {
         return employeeRepository.findAll();
     }
 
@@ -29,7 +29,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public long addEmployee(EmployeeDto employee) {
 
-        Employee employeeEntitiy = new Employee();
+        User employeeEntitiy = new User();
         employeeEntitiy.setEmail(employee.getEmail());
         employeeEntitiy.setName(employee.getName());
         employeeEntitiy.setLastName(employee.getLastName());

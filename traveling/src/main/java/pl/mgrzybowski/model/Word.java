@@ -1,9 +1,7 @@
 package pl.mgrzybowski.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Word {
@@ -16,6 +14,9 @@ public class Word {
     private String eng;
     @Column (name = "pol_word")
     private String pol;
+
+    @ManyToMany
+    private List <WordList> word;
 
 
     public Word(String eng, String pol) {

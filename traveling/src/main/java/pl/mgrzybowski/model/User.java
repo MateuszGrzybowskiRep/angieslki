@@ -4,7 +4,8 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class Employee {
+@Table(name = "Fiszki_User")
+public class User {
 
     @Id
     @GeneratedValue
@@ -20,12 +21,12 @@ public class Employee {
     private String phone;
     @Column(name="active")
     private boolean active;
-    public Employee() {
+    public User() {
         super();
     }
 
 
-    public Employee(String name, String lastName, String email, String phone, boolean active) {
+    public User(String name, String lastName, String email, String phone, boolean active) {
         this.name = name;
         this.lastName = lastName;
         this.email = email;

@@ -4,6 +4,7 @@ public class WordsDto {
     private long id;
     private String eng;
     private String pol;
+    private long listId;
 
     public long getId() {
         return id;

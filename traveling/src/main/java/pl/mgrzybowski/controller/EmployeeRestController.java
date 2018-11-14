@@ -7,24 +7,24 @@ import pl.mgrzybowski.mapper.EmployeeMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import pl.mgrzybowski.model.Employee;
-import pl.mgrzybowski.service.EmployeeService;
+import pl.mgrzybowski.model.User;
+import pl.mgrzybowski.service.UserService;
 
 @RestController
 public class EmployeeRestController {
 
     @Autowired
-    private EmployeeService employeeService;
+    private UserService employeeService;
 
     @RequestMapping(path="/employees", method=RequestMethod.GET)
     public List<EmployeeDto> getAllEmployees(){
-        List<Employee> allEmployees = employeeService.getAllEmployees();
+        List<User> allEmployees = employeeService.getAllEmployees();
         EmployeeMapper employeeMapper = new EmployeeMapper();
         return employeeMapper.toDtoList(allEmployees);
     }
 
     @RequestMapping(value = "/employee/{id}", method = RequestMethod.GET)
-    public Employee getEmployeeById(@PathVariable("id") long id){
+    public User getEmployeeById(@PathVariable("id") long id){
         return null;
     }
 

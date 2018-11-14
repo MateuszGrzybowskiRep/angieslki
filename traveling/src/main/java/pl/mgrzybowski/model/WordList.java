@@ -1,10 +1,7 @@
 package pl.mgrzybowski.model;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class WordList {
@@ -16,7 +13,12 @@ public class WordList {
     @Column(name="name_of_list")
     private String listName;
 
+    @ManyToOne
+    private User owner;
 
+    public void setOwner(User owner) {
+        this.owner = owner;
+    }
     public WordList(String lists) {
         this.listName = lists;
     }

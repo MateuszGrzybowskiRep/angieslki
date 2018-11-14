@@ -3,11 +3,11 @@ package pl.mgrzybowski.service;
 import java.util.List;
 
 import pl.mgrzybowski.dto.EmployeeDto;
-import pl.mgrzybowski.model.Employee;
+import pl.mgrzybowski.model.User;
 
-public interface EmployeeService {
+public interface UserService {
 
-     List<Employee> getAllEmployees();
+     List<User> getAllEmployees();
      void removeEmployee(Long id);
      long addEmployee(EmployeeDto employee);
 
